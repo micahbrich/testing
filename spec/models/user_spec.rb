@@ -13,7 +13,13 @@ RSpec.describe User, :type => :model do
     expect(user).to be_invalid
   end
 
-  it "has a first name"
+  it "has a first name" do
+    user = FactoryGirl.build(:user)
+    expect(user.first_name).to eq 'Dave'
+
+    user = FactoryGirl.build(:user, name:'Benjamin')
+    expect(user.first_name).to eq 'Benjamin'
+  end
 
   it "has a last name"
 
