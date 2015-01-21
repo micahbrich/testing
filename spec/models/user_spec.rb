@@ -20,8 +20,20 @@ RSpec.describe User, :type => :model do
     user = FactoryGirl.build(:user, name:'Benjamin')
     expect(user.first_name).to eq 'Benjamin'
   end
+ 
+  it "has a last name" do
+    user = FactoryGirl.build(:user)
+    expect(user.last_name).to eq 'Franco'
 
-  it "has a last name"
+    user = FactoryGirl.build(:user, name:'B. Franklin')
+    expect(user.last_name).to eq 'Franklin'
+
+    user = FactoryGirl.build(:user, name:'Franklin')
+    expect(user.last_name).to be_nil
+
+    user = FactoryGirl.build(:user, name:'Philip A. Harmonic')
+    expect(user.last_name).to eq 'Harmonic'
+  end
 
 
   it "has an email address" do
