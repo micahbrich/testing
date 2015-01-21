@@ -3,11 +3,17 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   def first_name
-    self.name.split(" ").first
+    names.first
   end
 
   def last_name
-    self.name.split(" ").last if self.name.split(" ").count > 1
+    names.last if names.count > 1
+  end
+
+  private 
+
+  def names
+    name.split(" ")
   end
 
 end
