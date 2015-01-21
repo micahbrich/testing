@@ -12,8 +12,20 @@ RSpec.describe User, :type => :model do
     user = FactoryGirl.build(:user, name: "")
     expect(user).to be_invalid
   end
-  
+
   it "has a first name"
+
   it "has a last name"
-  it "has an email address"
+
+
+  it "has an email address" do
+    user = FactoryGirl.build(:user)
+    expect(user.email).not_to be_nil
+
+    user = FactoryGirl.build(:user, email: nil)
+    expect(user).to be_invalid
+
+    user = FactoryGirl.build(:user, email: "")
+    expect(user.email).not_to be_nil
+  end
 end
