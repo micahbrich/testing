@@ -13,6 +13,10 @@ RSpec.describe User, :type => :model do
     expect(user).to be_invalid
   end
 
+  it "fails on purpose" do
+    expect(nil).to eq("")
+  end
+
   it "has a first name" do
     user = FactoryGirl.build(:user)
     expect(user.first_name).to eq 'Dave'
