@@ -15,7 +15,7 @@ rake db:create
 rake db:schema:load
 ```
 
-And you should be set up.
+And you should be set up. Good to go.
 
 ## Test It
 
