@@ -13,9 +13,9 @@ RSpec.describe User, :type => :model do
     expect(user).to be_invalid
   end
 
-  it "fails on purpose" do
-    expect(true).to be false
-  end
+  # it "fails on purpose" do
+    # expect(true).to be true
+  # end
 
   it "has a first name" do
     user = FactoryGirl.build(:user)
