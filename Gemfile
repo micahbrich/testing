@@ -26,15 +26,16 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'rspec_junit_formatter', :git => 'git@github.com:circleci/rspec_junit_formatter.git', group: :test
 group :development, :test do
   gem 'rspec-rails'
-  gem 'rspec_junit_formatter', :git => 'git@github.com:circleci/rspec_junit_formatter.git'
   gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem "codeclimate-test-reporter", group: :test, require: nil
 # Use unicorn as the app server
 # gem 'unicorn'
 
