@@ -26,3 +26,4 @@ bundle exec rspec
 ```
 
 If everything's green, you're ready to go. If you intend to submit a pull request, first _make a fork_, then write all your code in a new feature branch, and when all the tests are passing you can submit a pull request.
+
